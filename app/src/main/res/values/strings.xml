@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">NovastoneInterview</string>
+    <string name="app_name">Weather App</string>
+    <string name="temp">Temperature : %.2f</string>
+    <string name="temp_min">Min temperature : %.2f</string>
+    <string name="temp_max">Max temperature : %.2f</string>
+    <string name="pressure">Pressure : %.2f</string>
+    <string name="sea_level">Sea level : %.2f</string>
+    <string name="ground_level">Ground level : %.2f</string>
+    <string name="humidity">Humidity : %.2f</string>
 </resources>

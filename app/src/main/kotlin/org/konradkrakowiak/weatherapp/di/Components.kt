@@ -1,8 +1,13 @@
 package org.konradkrakowiak.weatherapp.di
 
+import android.app.Activity
 import dagger.Component
 import dagger.Subcomponent
+import org.konradkrakowiak.weatherapp.MainActivity
+import org.konradkrakowiak.weatherapp.OpenWeatherApp
 import org.konradkrakowiak.weatherapp.common.ui.BaseFragment
+import org.konradkrakowiak.weatherapp.weatherdetails.ui.WeatherDetailsFragment
+import org.konradkrakowiak.weatherapp.weatherlist.ui.WeatherListFragment
 import javax.inject.Singleton
 
 
@@ -16,7 +21,7 @@ interface AppComponent {
         }
     }
 
-    fun activityComponent(): ActivityComponent
+    fun activityComponent() : ActivityComponent
 }
 
 @ActivityScope
@@ -31,6 +36,7 @@ interface ActivityComponent {
 
     fun fragmentComponent(fragmentModule: FragmentModule): FragmentComponent
 
+    fun inject(mainActivity: MainActivity)
 }
 
 @FragmentScope
@@ -38,10 +44,14 @@ interface ActivityComponent {
 interface FragmentComponent {
 
     companion object {
-        fun create(activityComponent: ActivityComponent, baseFragment: BaseFragment<*>): FragmentComponent {
+        fun create(activityComponent: ActivityComponent): FragmentComponent {
             return activityComponent.fragmentComponent(FragmentModule())
         }
     }
+
+    fun inject(weatherListFragment: WeatherListFragment)
+
+    fun inject(weatherDetailsFragment: WeatherDetailsFragment)
 }
 
 
