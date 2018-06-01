@@ -31,7 +31,7 @@ class WeatherDetailsFragment : BaseFragment<WeatherDetailsPresenter>(), WeatherD
             city_name.text = weatherDetailsModel.cityName
             temp.text = context.getString(R.string.temp, weatherDetailsModel.temp)
             temp_min.text = context.getString(R.string.temp_min, weatherDetailsModel.tempMin)
-            temp_max.text = context.getString(R.string.temp_min, weatherDetailsModel.tempMax)
+            temp_max.text = context.getString(R.string.temp_max, weatherDetailsModel.tempMax)
             pressure.text = context.getString(R.string.pressure, weatherDetailsModel.pressure)
             sea_level.text = context.getString(R.string.sea_level, weatherDetailsModel.seaLevel)
             ground_level.text = context.getString(R.string.ground_level, weatherDetailsModel.grondLevel)
